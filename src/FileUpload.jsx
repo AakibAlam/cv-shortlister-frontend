@@ -33,7 +33,7 @@ const FileUploadComponent = () => {
     try {
       console.log(formData);
       const response = await axios.post(
-        "https://cv-shortlister.azurewebsites.net/submit/",
+        "https://cv-shortlister-backend.azurewebsites.net/submit/",
         formData,
         {
           headers: {
