@@ -33,7 +33,8 @@ const FileUploadComponent = () => {
     try {
       console.log(formData);
       const response = await axios.post(
-        "https://cv-shortlister-backend.azurewebsites.net/submit/",
+        "http://localhost:8000/submit/",
+        // "https://cv-shortlister-backend.azurewebsites.net/submit/",
         formData,
         {
           headers: {
@@ -41,7 +42,7 @@ const FileUploadComponent = () => {
           },
         }
       );
-      console.log("Response:", response.data);
+      // console.log("Response:", response.data);
       return response.data;
     } catch (error) {
       console.error("Error:", error);
