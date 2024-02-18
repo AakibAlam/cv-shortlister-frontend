@@ -61,16 +61,6 @@ const OverlayCard = ({ onClose, selectedFiles, onSubmit }) => {
           textAlign: "left",
         }}
       >
-        {/* <div
-          style={{
-            backgroundColor: "#fff",
-            padding: "20px",
-            borderRadius: "10px",
-            position: "relative",
-            width: "40%",
-            textAlign: "left",
-          }}
-        > */}
         <div style={{ margin: "50px" }}>
           <FontAwesomeIcon
             icon={faFlag}
@@ -121,10 +111,8 @@ const OverlayCard = ({ onClose, selectedFiles, onSubmit }) => {
         <div style={{ textAlign: "center", marginTop: "30px" }}>
           <Button variant="primary" style={{ width: "8rem" }} type="submit">
             {loading ? <Spinner animation="border" size="sm" /> : "Submit"}{" "}
-            {/* Show loading spinner when loading */}
           </Button>{" "}
         </div>
-        {/* </div> */}
       </form>
     </div>
   );

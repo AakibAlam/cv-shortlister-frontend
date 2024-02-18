@@ -5,6 +5,8 @@ import FileCard from "./ResumeCard";
 import OverlayCard from "./RoleForm";
 import axios from "axios";
 
+threshold_for_total_file_size = 5;
+
 const FileUploadComponent = () => {
   const [showOverlay, setShowOverlay] = useState(false);
   const [selectedFiles, setSelectedFiles] = useState([]);
@@ -56,10 +58,9 @@ const FileUploadComponent = () => {
   };
 
   const handleNextButtonClick = () => {
-    // check for size of each file and if it is greater than 5MB then show error message
     const totalSize = selectedFiles.reduce((acc, file) => acc + file.size, 0);
-    const totalSizeInMB = totalSize / (1024 * 1024); // Convert total size to MB
-    if (totalSizeInMB > 5) {
+    const totalSizeInMB = totalSize / (1024 * 1024);
+    if (totalSizeInMB > threshold_for_total_file_size) {
       alert("Total file size should be less than 5MB.");
     } else {
       setShowOverlay(true);

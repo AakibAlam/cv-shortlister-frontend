@@ -1,8 +1,40 @@
-# React + Vite
+# CV Shortlister Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CV Shortlister Frontend is a React-based frontend application for managing and analyzing resumes.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Before you begin, ensure you have met the following requirements:
+
+- Node.js installed on your local machine
+- npm package manager installed
+
+## Getting Started
+
+To set up this project locally, follow these steps:
+
+1. Clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/AakibAlam/cv-shortlister-frontend.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd cv-shortlister-frontend
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+   The server will start running locally at `http://localhost:3000/`.
