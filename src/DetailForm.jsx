@@ -11,8 +11,8 @@ const OverlayCard = ({ onClose, details }) => {
       case "education":
         return (
           <div>
-            {Array.isArray(details.education?.College) &&
-              details.education.College.map((item, index) => (
+            {Array.isArray(details["education"]) &&
+              details["education"].map((item, index) => (
                 <div key={index}>
                   <p>
                     <strong>{item.degree}</strong>
@@ -41,51 +41,47 @@ const OverlayCard = ({ onClose, details }) => {
               ))}
           </div>
         );
-      case "workExperience":
+      case "Professional Experience":
         return (
           <div>
-            {Array.isArray(
-              details.work_experiences?.["Professional Experience"]
-            ) &&
-              details.work_experiences["Professional Experience"].map(
-                (item, index) => (
-                  <div key={index}>
-                    <p>
-                      <strong>{item.organization}</strong>
-                    </p>
-                    <Row style={{ marginBottom: "10px" }}>
-                      <Col sm={4}>Role</Col>
-                      <Col sm={8}>{item.role}</Col>
-                    </Row>
-                    <Row style={{ marginBottom: "10px" }}>
-                      <Col sm={4}>Short Description</Col>
-                      <Col sm={8}>{item.short_description}</Col>
-                    </Row>
-                    <Row style={{ marginBottom: "10px" }}>
-                      <Col sm={4}>Tech Stack</Col>
-                      <Col sm={8}>{item.tech_stack}</Col>
-                    </Row>
-                    <Row style={{ marginBottom: "10px" }}>
-                      <Col sm={4}>Time Duration</Col>
-                      <Col sm={8}>
-                        {item.time_duration?.start} - {item.time_duration?.end}{" "}
-                        ({item.time_duration?.duration_months} months)
-                      </Col>
-                    </Row>
-                    <Row style={{ marginBottom: "10px" }}>
-                      <Col sm={4}>Relevance Score</Col>
-                      <Col sm={8}>{item.relevancy}</Col>
-                    </Row>
-                  </div>
-                )
-              )}
+            {Array.isArray(details["Professional Experience"]) &&
+              details["Professional Experience"].map((item, index) => (
+                <div key={index}>
+                  <p>
+                    <strong>{item.organization}</strong>
+                  </p>
+                  <Row style={{ marginBottom: "10px" }}>
+                    <Col sm={4}>Role</Col>
+                    <Col sm={8}>{item.role}</Col>
+                  </Row>
+                  <Row style={{ marginBottom: "10px" }}>
+                    <Col sm={4}>Short Description</Col>
+                    <Col sm={8}>{item.short_description}</Col>
+                  </Row>
+                  <Row style={{ marginBottom: "10px" }}>
+                    <Col sm={4}>Tech Stack</Col>
+                    <Col sm={8}>{item.tech_stack}</Col>
+                  </Row>
+                  <Row style={{ marginBottom: "10px" }}>
+                    <Col sm={4}>Time Duration</Col>
+                    <Col sm={8}>
+                      {item.time_duration?.start} - {item.time_duration?.end} (
+                      {item.time_duration?.duration_months} months)
+                    </Col>
+                  </Row>
+                  <Row style={{ marginBottom: "10px" }}>
+                    <Col sm={4}>Relevance Score</Col>
+                    <Col sm={8}>{item.relevancy}</Col>
+                  </Row>
+                </div>
+              ))}
           </div>
         );
       case "projects":
         return (
           <div>
-            {Array.isArray(details.projects?.["Projects"]) &&
-              details.projects["Projects"].map((item, index) => (
+            {Array.isArray(details["projects"]) &&
+              details["projects"].map((item, index) => (
                 <div key={index}>
                   <p>
                     <strong>{item.project_title}</strong>
@@ -181,11 +177,11 @@ const OverlayCard = ({ onClose, details }) => {
             <button
               style={{
                 backgroundColor:
-                  activeSection === "workExperience"
+                  activeSection === "Professional Experience"
                     ? "aliceblue"
                     : "transparent",
               }}
-              onClick={() => setActiveSection("workExperience")}
+              onClick={() => setActiveSection("Professional Experience")}
             >
               Work Experience
             </button>

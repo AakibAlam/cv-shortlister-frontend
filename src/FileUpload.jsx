@@ -91,7 +91,7 @@ const FileUploadComponent = () => {
       >
         <img src={dragDrop} alt="Drag and Drop" style={{ width: "70px" }} />
         <p>
-          <a href="" onClick={handleUploadButtonClick}>
+          <a href="#" onClick={handleUploadButtonClick}>
             Click to upload PDF
           </a>{" "}
           or drag and drop

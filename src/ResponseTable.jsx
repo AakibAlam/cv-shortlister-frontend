@@ -50,7 +50,9 @@ function ResponseTable() {
                     <td>{data.score}</td>
                     <td>
                       <a
-                        href={URL.createObjectURL(files[parseInt(data.resume)])}
+                        href={URL.createObjectURL(
+                          files[parseInt(data.resume_index)]
+                        )}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
