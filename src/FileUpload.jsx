@@ -5,7 +5,7 @@ import FileCard from "./ResumeCard";
 import OverlayCard from "./RoleForm";
 import axios from "axios";
 
-threshold_for_total_file_size = 5;
+const threshold_for_total_file_size = 5;
 
 const FileUploadComponent = () => {
   const [showOverlay, setShowOverlay] = useState(false);
@@ -91,7 +91,7 @@ const FileUploadComponent = () => {
       >
         <img src={dragDrop} alt="Drag and Drop" style={{ width: "70px" }} />
         <p>
-          <a href="#" onClick={handleUploadButtonClick}>
+          <a href="" onClick={handleUploadButtonClick}>
             Click to upload PDF
           </a>{" "}
           or drag and drop
