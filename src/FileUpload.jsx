@@ -35,7 +35,8 @@ const FileUploadComponent = () => {
     try {
       console.log(formData);
       const response = await axios.post(
-        "http://localhost:8000/submit/",
+        // "http://localhost:8000/submit/",
+        "https://demo-app-django.azurewebsites.net/submit/",
         // "https://cv-shortlister-backend.azurewebsites.net/submit/",
         formData,
         {
