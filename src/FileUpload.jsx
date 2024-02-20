@@ -31,26 +31,6 @@ const FileUploadComponent = () => {
     fileInputRef.current.click();
   };
 
-  const handleSubmit = async (formData) => {
-    try {
-      console.log(formData);
-      const response = await axios.post(
-        // "http://localhost:8000/submit/",
-        "https://cv-shortlister-backend.azurewebsites.net/submit/",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-      // console.log("Response:", response.data);
-      return response.data;
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
   const handleDelete = (index) => {
     const newSelectedFiles = [...selectedFiles];
     newSelectedFiles.splice(index, 1);
@@ -76,7 +56,7 @@ const FileUploadComponent = () => {
   };
 
   return (
-    <div style={{ maxWidth: "500px", margin: "100px auto" }}>
+    <div style={{ maxWidth: "600px", margin: "80px auto" }}>
       <div
         onDrop={handleDrop}
         onDragOver={handleDragOver}
@@ -140,7 +120,6 @@ const FileUploadComponent = () => {
         <OverlayCard
           onClose={handleCloseOverlay}
           selectedFiles={selectedFiles}
-          onSubmit={handleSubmit}
         />
       )}
     </div>

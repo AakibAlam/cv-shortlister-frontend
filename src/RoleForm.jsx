@@ -1,17 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Spinner } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faFlag } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
-const OverlayCard = ({ onClose, selectedFiles, onSubmit }) => {
+const OverlayCard = ({ onClose, selectedFiles }) => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
-  const [response, setResponse] = useState(null);
+
+  const handleSubmit = async (formData) => {
+    try {
+      axios.post(
+        "http://localhost:8000/submit/",
+        // "https://cv-shortlister-backend.azurewebsites.net/submit/",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
     const formData = new FormData();
     selectedFiles.forEach((file, index) => {
       formData.append("resume", file);
@@ -22,16 +37,12 @@ const OverlayCard = ({ onClose, selectedFiles, onSubmit }) => {
     formData.append("jobDescription", jobDescription);
 
     try {
-      const responseData = await onSubmit(formData);
-      console.log(responseData);
-      setResponse(responseData);
+      handleSubmit(formData);
       navigate("/result", {
-        state: { response: responseData, files: selectedFiles },
+        state: { files: selectedFiles },
       });
     } catch (error) {
       console.error("Error submitting form:", error);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -57,7 +68,8 @@ const OverlayCard = ({ onClose, selectedFiles, onSubmit }) => {
           padding: "20px",
           borderRadius: "10px",
           position: "relative",
-          width: "24rem",
+          width: "90%",
+          maxWidth: "600px",
           textAlign: "left",
         }}
       >
@@ -110,7 +122,7 @@ const OverlayCard = ({ onClose, selectedFiles, onSubmit }) => {
         />
         <div style={{ textAlign: "center", marginTop: "30px" }}>
           <Button variant="primary" style={{ width: "8rem" }} type="submit">
-            {loading ? <Spinner animation="border" size="sm" /> : "Submit"}{" "}
+            Submit
           </Button>{" "}
         </div>
       </form>

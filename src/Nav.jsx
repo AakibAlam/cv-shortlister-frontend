@@ -7,15 +7,17 @@ function Nav() {
     <>
       <Navbar className="navbar">
         <Container>
-          <p
+          <a
+            href="/"
             style={{
               fontSize: "70px",
               color: "blue",
               fontWeight: "bold",
+              textDecoration: "none",
             }}
           >
             crux
-          </p>
+          </a>
         </Container>
       </Navbar>
     </>

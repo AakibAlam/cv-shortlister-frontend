@@ -187,7 +187,7 @@ const OverlayCard = ({ onClose, details }) => {
               }}
               onClick={() => setActiveSection("education")}
             >
-              Education
+              Degree
             </button>
             <button
               style={{
@@ -207,7 +207,7 @@ const OverlayCard = ({ onClose, details }) => {
               }}
               onClick={() => setActiveSection("Professional Experience")}
             >
-              Work-Exp
+              WEX
             </button>
           </div>
           {renderSection(activeSection)}
