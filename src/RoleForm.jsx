@@ -57,7 +57,7 @@ const OverlayCard = ({ onClose, selectedFiles, onSubmit }) => {
           padding: "20px",
           borderRadius: "10px",
           position: "relative",
-          width: "28rem",
+          width: "24rem",
           textAlign: "left",
         }}
       >

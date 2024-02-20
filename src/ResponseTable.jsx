@@ -38,7 +38,7 @@ function ResponseTable() {
               <tr>
                 <th>Name</th>
                 <th>Score</th>
-                <th>Resume Link</th>
+                <th>Resume</th>
                 <th>Details</th>
               </tr>
             </thead>
@@ -60,9 +60,7 @@ function ResponseTable() {
                       </a>
                     </td>
                     <td>
-                      <a onClick={() => handleViewDetails(data)}>
-                        View Details
-                      </a>
+                      <a onClick={() => handleViewDetails(data)}>View</a>
                     </td>
                   </tr>
                   <tr key={2 * index + 1}>

@@ -5,7 +5,7 @@ import { faFilePdf, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 const FileCard = ({ file, onDelete }) => {
   return (
-    <Card style={{ width: "27rem", margin: "auto" }}>
+    <Card style={{ width: "80%", maxWidth: "500px", margin: "auto" }}>
       <Card.Body
         style={{
           display: "flex",
@@ -13,14 +13,8 @@ const FileCard = ({ file, onDelete }) => {
           justifyContent: "space-between",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            flexGrow: 1,
-          }}
-        >
-          <FontAwesomeIcon icon={faFilePdf} style={{ marginRight: "10px" }} />
+        <div>
+          <FontAwesomeIcon icon={faFilePdf} style={{ marginRight: "20px" }} />
           <a
             href={URL.createObjectURL(file)}
             target="_blank"
@@ -32,7 +26,7 @@ const FileCard = ({ file, onDelete }) => {
         <FontAwesomeIcon
           icon={faTimesCircle}
           style={{ cursor: "pointer" }}
-          onClick={onDelete} // Fixed this line
+          onClick={onDelete}
         />
       </Card.Body>
     </Card>

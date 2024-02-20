@@ -19,23 +19,33 @@ const OverlayCard = ({ onClose, details }) => {
                   </p>
                   <Row style={{ marginBottom: "10px" }}>
                     <Col sm={3}>Name</Col>
-                    <Col sm={9}>{item.name}</Col>
+                    <Col sm={9} style={{ color: "gray" }}>
+                      {item.name}
+                    </Col>
                   </Row>
                   <Row style={{ marginBottom: "10px" }}>
                     <Col sm={3}>Branch</Col>
-                    <Col sm={9}>{item.branch}</Col>
+                    <Col sm={9} style={{ color: "gray" }}>
+                      {item.branch}
+                    </Col>
                   </Row>
                   <Row style={{ marginBottom: "10px" }}>
                     <Col sm={3}>CGPA</Col>
-                    <Col sm={9}>{item.cgpa}</Col>
+                    <Col sm={9} style={{ color: "gray" }}>
+                      {item.cgpa}
+                    </Col>
                   </Row>
                   <Row style={{ marginBottom: "10px" }}>
                     <Col sm={3}>Start</Col>
-                    <Col sm={9}>{item.start}</Col>
+                    <Col sm={9} style={{ color: "gray" }}>
+                      {item.start}
+                    </Col>
                   </Row>
                   <Row style={{ marginBottom: "10px" }}>
                     <Col sm={3}>End</Col>
-                    <Col sm={9}>{item.end}</Col>
+                    <Col sm={9} style={{ color: "gray" }}>
+                      {item.end}
+                    </Col>
                   </Row>
                 </div>
               ))}
@@ -52,26 +62,34 @@ const OverlayCard = ({ onClose, details }) => {
                   </p>
                   <Row style={{ marginBottom: "10px" }}>
                     <Col sm={4}>Role</Col>
-                    <Col sm={8}>{item.role}</Col>
+                    <Col sm={8} style={{ color: "gray" }}>
+                      {item.role}
+                    </Col>
                   </Row>
                   <Row style={{ marginBottom: "10px" }}>
                     <Col sm={4}>Short Description</Col>
-                    <Col sm={8}>{item.short_description}</Col>
+                    <Col sm={8} style={{ color: "gray" }}>
+                      {item.short_description}
+                    </Col>
                   </Row>
                   <Row style={{ marginBottom: "10px" }}>
                     <Col sm={4}>Tech Stack</Col>
-                    <Col sm={8}>{item.tech_stack}</Col>
+                    <Col sm={8} style={{ color: "gray" }}>
+                      {item.tech_stack}
+                    </Col>
                   </Row>
                   <Row style={{ marginBottom: "10px" }}>
                     <Col sm={4}>Time Duration</Col>
-                    <Col sm={8}>
+                    <Col sm={8} style={{ color: "gray" }}>
                       {item.time_duration?.start} - {item.time_duration?.end} (
                       {item.time_duration?.duration_months} months)
                     </Col>
                   </Row>
                   <Row style={{ marginBottom: "10px" }}>
                     <Col sm={4}>Relevance Score</Col>
-                    <Col sm={8}>{item.relevancy}</Col>
+                    <Col sm={8} style={{ color: "gray" }}>
+                      {item.relevancy}
+                    </Col>
                   </Row>
                 </div>
               ))}
@@ -88,22 +106,28 @@ const OverlayCard = ({ onClose, details }) => {
                   </p>
                   <Row style={{ marginBottom: "10px" }}>
                     <Col sm={4}>Short Description</Col>
-                    <Col sm={8}>{item.short_description}</Col>
+                    <Col sm={8} style={{ color: "gray" }}>
+                      {item.short_description}
+                    </Col>
                   </Row>
                   <Row style={{ marginBottom: "10px" }}>
                     <Col sm={4}>Tech Stack</Col>
-                    <Col sm={8}>{item.tech_stack}</Col>
+                    <Col sm={8} style={{ color: "gray" }}>
+                      {item.tech_stack}
+                    </Col>
                   </Row>
                   <Row style={{ marginBottom: "10px" }}>
                     <Col sm={4}>Time Duration</Col>
-                    <Col sm={8}>
+                    <Col sm={8} style={{ color: "gray" }}>
                       {item.time_duration?.start} - {item.time_duration?.end} (
                       {item.time_duration?.duration_months} months)
                     </Col>
                   </Row>
                   <Row style={{ marginBottom: "10px" }}>
                     <Col sm={4}>Relevance Score</Col>
-                    <Col sm={8}>{item.relevancy}</Col>
+                    <Col sm={8} style={{ color: "gray" }}>
+                      {item.relevancy}
+                    </Col>
                   </Row>
                 </div>
               ))}
@@ -132,13 +156,15 @@ const OverlayCard = ({ onClose, details }) => {
       <div
         style={{
           backgroundColor: "#fff",
-          padding: "20px",
+          padding: "10px",
           borderRadius: "10px",
           position: "relative",
-          width: "60%",
-          height: "70%", // Adjust this height as needed
-          overflow: "auto", // Enable scrolling if content exceeds container height
+          width: "90%",
+          height: "70%",
+          overflow: "auto",
           textAlign: "left",
+          maxWidth: "600px",
+          marginLeft: "0px",
         }}
       >
         <div style={{ margin: "50px" }}>
@@ -156,7 +182,6 @@ const OverlayCard = ({ onClose, details }) => {
           <div style={{ marginBottom: "20px" }}>
             <button
               style={{
-                marginRight: "10px",
                 backgroundColor:
                   activeSection === "education" ? "aliceblue" : "transparent",
               }}
@@ -166,7 +191,6 @@ const OverlayCard = ({ onClose, details }) => {
             </button>
             <button
               style={{
-                marginRight: "10px",
                 backgroundColor:
                   activeSection === "projects" ? "aliceblue" : "transparent",
               }}
@@ -183,7 +207,7 @@ const OverlayCard = ({ onClose, details }) => {
               }}
               onClick={() => setActiveSection("Professional Experience")}
             >
-              Work Experience
+              Work-Exp
             </button>
           </div>
           {renderSection(activeSection)}

@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import dragDrop from "../public/static/drag-and-drop-icon.jpg";
 import Button from "react-bootstrap/Button";
-import { Row, Col } from "react-bootstrap";
 import FileCard from "./ResumeCard";
 import OverlayCard from "./RoleForm";
 import axios from "axios";
@@ -77,91 +76,74 @@ const FileUploadComponent = () => {
   };
 
   return (
-    <>
-      <Row>
-        <Col sm={4}></Col>
-        <Col
-          sm={4}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-          }}
-        >
-          <div
-            onDrop={handleDrop}
-            onDragOver={handleDragOver}
-            style={{
-              border: "2px solid blue",
-              padding: "20px",
-              marginTop: "100px",
-              marginBottom: "20px",
-              borderRadius: "10px",
-              width: "27rem",
-            }}
-          >
-            <img src={dragDrop} alt="Drag and Drop" style={{ width: "70px" }} />
-            <p>
-              <a href="#" onClick={handleUploadButtonClick}>
-                Click to upload PDF
-              </a>{" "}
-              or drag and drop
-            </p>
-            <input
-              type="file"
-              accept=".pdf"
-              multiple
-              onChange={handleFileChange}
-              style={{ display: "none" }}
-              ref={fileInputRef}
-            />
-          </div>
-          {selectedFiles.length > 0 && (
-            <div>
-              <h3>Uploaded Resumes:</h3>
-              {selectedFiles.map((file, index) => (
-                <div key={index} style={{ marginBottom: "10px" }}>
-                  <FileCard file={file} onDelete={() => handleDelete(index)} />{" "}
-                </div>
-              ))}
+    <div style={{ maxWidth: "500px", margin: "100px auto" }}>
+      <div
+        onDrop={handleDrop}
+        onDragOver={handleDragOver}
+        style={{
+          border: "2px solid blue",
+          padding: "20px",
+          marginBottom: "20px",
+          borderRadius: "10px",
+          textAlign: "center",
+          width: "80%",
+          margin: "auto",
+        }}
+      >
+        <img src={dragDrop} alt="Drag and Drop" style={{ width: "70px" }} />
+        <p>
+          <a href="#" onClick={handleUploadButtonClick}>
+            Click to upload PDF
+          </a>{" "}
+          or drag and drop
+        </p>
+        <input
+          type="file"
+          accept=".pdf"
+          multiple
+          onChange={handleFileChange}
+          style={{ display: "none" }}
+          ref={fileInputRef}
+        />
+      </div>
+      {selectedFiles.length > 0 && (
+        <div style={{ textAlign: "left", marginTop: "30px" }}>
+          {selectedFiles.map((file, index) => (
+            <div key={index} style={{ marginBottom: "10px" }}>
+              <FileCard file={file} onDelete={() => handleDelete(index)} />{" "}
             </div>
-          )}
+          ))}
+        </div>
+      )}
+      <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <Button
+          variant="light"
+          style={{
+            width: "7rem",
+            border: "2px solid #000",
+            marginRight: "50px",
+          }}
+          onClick={handleOnCancel}
+        >
+          Cancel
+        </Button>
 
-          <div
-            style={{ margin: "20px" }}
-            className="d-flex justify-content-between"
-          >
-            <Button
-              variant="light"
-              style={{
-                width: "10rem",
-                border: "2px solid #000",
-                margin: "20px",
-              }}
-              onClick={handleOnCancel}
-            >
-              Cancel
-            </Button>{" "}
-            <Button
-              variant="primary"
-              style={{ width: "10rem", margin: "20px" }}
-              onClick={handleNextButtonClick}
-            >
-              Next
-            </Button>{" "}
-          </div>
-          {showOverlay && (
-            <OverlayCard
-              onClose={handleCloseOverlay}
-              selectedFiles={selectedFiles}
-              onSubmit={handleSubmit}
-            />
-          )}
-        </Col>
-        <Col sm={4}></Col>
-      </Row>
-    </>
+        <Button
+          variant="primary"
+          style={{ width: "7rem" }}
+          onClick={handleNextButtonClick}
+        >
+          Next
+        </Button>
+      </div>
+      {showOverlay && (
+        <OverlayCard
+          onClose={handleCloseOverlay}
+          selectedFiles={selectedFiles}
+          onSubmit={handleSubmit}
+        />
+      )}
+    </div>
   );
 };
 
