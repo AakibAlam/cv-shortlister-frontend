@@ -11,8 +11,8 @@ const OverlayCard = ({ onClose, selectedFiles }) => {
   const handleSubmit = async (formData) => {
     try {
       axios.post(
-        "http://localhost:8000/submit/",
-        // "https://cv-shortlister-backend.azurewebsites.net/submit/",
+        // "http://localhost:8000/submit/",
+        "https://cv-shortlister-backend.azurewebsites.net/submit/",
         formData,
         {
           headers: {
