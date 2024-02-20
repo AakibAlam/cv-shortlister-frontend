@@ -5,7 +5,7 @@ import { faFilePdf, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 const FileCard = ({ file, onDelete }) => {
   return (
-    <Card style={{ width: "40%", margin: "auto" }}>
+    <Card style={{ width: "27rem", margin: "auto" }}>
       <Card.Body
         style={{
           display: "flex",

@@ -57,7 +57,7 @@ const OverlayCard = ({ onClose, selectedFiles, onSubmit }) => {
           padding: "20px",
           borderRadius: "10px",
           position: "relative",
-          width: "40%",
+          width: "28rem",
           textAlign: "left",
         }}
       >
@@ -102,7 +102,7 @@ const OverlayCard = ({ onClose, selectedFiles, onSubmit }) => {
             margin: "0 auto",
             padding: "10px",
             width: "100%",
-            height: "100px",
+            height: "120px",
             resize: "vertical",
           }}
           placeholder="e.g. I joined Crux's Customer Success team to help them scale their checkout product. I focused mainly on onboarding new customers and resolving new complaints"
