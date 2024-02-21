@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<FileUploadComponent />} />
         <Route path="/result" element={<ResponseTable />} />
+        <Route path="*" element={<FileUploadComponent />} />
       </Routes>
     </div>
   );
