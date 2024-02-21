@@ -3,7 +3,6 @@ import dragDrop from "../public/static/drag-and-drop-icon.jpg";
 import Button from "react-bootstrap/Button";
 import FileCard from "./ResumeCard";
 import OverlayCard from "./RoleForm";
-import axios from "axios";
 
 const threshold_for_total_file_size = 5;
 
@@ -25,10 +24,6 @@ const FileUploadComponent = () => {
 
   const handleDragOver = (e) => {
     e.preventDefault();
-  };
-
-  const handleUploadButtonClick = () => {
-    fileInputRef.current.click();
   };
 
   const handleDelete = (index) => {
@@ -68,15 +63,12 @@ const FileUploadComponent = () => {
           textAlign: "center",
           width: "80%",
           margin: "auto",
+          cursor: "pointer",
         }}
+        onClick={() => fileInputRef.current.click()}
       >
         <img src={dragDrop} alt="Drag and Drop" style={{ width: "70px" }} />
-        <p>
-          <a href="#" onClick={handleUploadButtonClick}>
-            Click to upload PDF
-          </a>{" "}
-          or drag and drop
-        </p>
+        <p style={{ color: "black" }}>Click to upload PDF or drag and drop</p>
         <input
           type="file"
           accept=".pdf"
@@ -86,6 +78,7 @@ const FileUploadComponent = () => {
           ref={fileInputRef}
         />
       </div>
+
       {selectedFiles.length > 0 && (
         <div style={{ textAlign: "left", marginTop: "30px" }}>
           {selectedFiles.map((file, index) => (

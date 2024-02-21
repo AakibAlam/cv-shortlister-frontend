@@ -11,7 +11,7 @@ function ResponseTable() {
   const [allScoresReceived, setAllScoresReceived] = useState(false);
   const [selectedDetails, setSelectedDetails] = useState(null);
   const [intervalId, setIntervalId] = useState(null);
-  const [sortDirection, setSortDirection] = useState("asc"); // State variable to store sort direction
+  const [sortDirection, setSortDirection] = useState("desc"); // State variable to store sort direction
   const [sortedResult, setSortedResult] = useState([]); // State variable to store sorted result
 
   const files = location.state?.files;
