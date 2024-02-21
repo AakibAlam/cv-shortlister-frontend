@@ -38,3 +38,9 @@ To set up this project locally, follow these steps:
    ```
 
    The server will start running locally at `http://localhost:3000/`.
+
+## Backend Part of this project
+
+Github Repo: https://github.com/AakibAlam/cv-shortlister-backend/
+
+Deployed Link: https://cv-shortlister-backend.azurewebsites.net/
