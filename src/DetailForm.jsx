@@ -11,8 +11,8 @@ const OverlayCard = ({ onClose, details }) => {
       case "education":
         return (
           <div>
-            {Array.isArray(details["education"]) &&
-              details["education"].map((item, index) => (
+            {Array.isArray(details["Education"]) &&
+              details["Education"].map((item, index) => (
                 <div key={index}>
                   <p>
                     <strong>{item.degree}</strong>
@@ -98,8 +98,8 @@ const OverlayCard = ({ onClose, details }) => {
       case "projects":
         return (
           <div>
-            {Array.isArray(details["projects"]) &&
-              details["projects"].map((item, index) => (
+            {Array.isArray(details["Projects"]) &&
+              details["Projects"].map((item, index) => (
                 <div key={index}>
                   <p>
                     <strong>{item.project_title}</strong>

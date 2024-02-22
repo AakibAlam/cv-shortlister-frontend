@@ -19,6 +19,7 @@ const FileCard = ({ file, onDelete }) => {
             href={URL.createObjectURL(file)}
             target="_blank"
             rel="noopener noreferrer"
+            style={{ flex: "1", overflow: "hidden", textOverflow: "ellipsis" }}
           >
             {file.name}
           </a>
